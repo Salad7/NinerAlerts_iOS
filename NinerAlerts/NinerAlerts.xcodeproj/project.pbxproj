@@ -14,6 +14,9 @@
 		0FD39ED1201BAD5300E8DFB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD39ECF201BAD5300E8DFB5 /* LaunchScreen.storyboard */; };
 		0FD39EDC201BAD5300E8DFB5 /* NinerAlertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD39EDB201BAD5300E8DFB5 /* NinerAlertsTests.swift */; };
 		0FD39EE7201BAD5300E8DFB5 /* NinerAlertsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD39EE6201BAD5300E8DFB5 /* NinerAlertsUITests.swift */; };
+		0FD39EF5201BB61E00E8DFB5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD39EF4201BB61E00E8DFB5 /* Event.swift */; };
+		0FD39EF7201BB7C700E8DFB5 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD39EF6201BB7C700E8DFB5 /* EventTableViewCell.swift */; };
+		0FD39EF9201BB90A00E8DFB5 /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD39EF8201BB90A00E8DFB5 /* BroadcastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		0FD39EE2201BAD5300E8DFB5 /* NinerAlertsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinerAlertsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD39EE6201BAD5300E8DFB5 /* NinerAlertsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinerAlertsUITests.swift; sourceTree = "<group>"; };
 		0FD39EE8201BAD5300E8DFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD39EF4201BB61E00E8DFB5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0FD39EF6201BB7C700E8DFB5 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		0FD39EF8201BB90A00E8DFB5 /* BroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				0FD39ECD201BAD5300E8DFB5 /* Assets.xcassets */,
 				0FD39ECF201BAD5300E8DFB5 /* LaunchScreen.storyboard */,
 				0FD39ED2201BAD5300E8DFB5 /* Info.plist */,
+				0FD39EF4201BB61E00E8DFB5 /* Event.swift */,
+				0FD39EF6201BB7C700E8DFB5 /* EventTableViewCell.swift */,
+				0FD39EF8201BB90A00E8DFB5 /* BroadcastViewController.swift */,
 			);
 			path = NinerAlerts;
 			sourceTree = "<group>";
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD39EF7201BB7C700E8DFB5 /* EventTableViewCell.swift in Sources */,
 				0FD39EC9201BAD5300E8DFB5 /* ViewController.swift in Sources */,
+				0FD39EF5201BB61E00E8DFB5 /* Event.swift in Sources */,
+				0FD39EF9201BB90A00E8DFB5 /* BroadcastViewController.swift in Sources */,
 				0FD39EC7201BAD5300E8DFB5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

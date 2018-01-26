@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="Kmu-cW-aTK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="Kmu-cW-aTK" customClass="EventTableViewCell" customModule="NinerAlerts" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kmu-cW-aTK" id="udQ-3g-hn7">
@@ -57,6 +57,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detail" destination="xG1-JG-AHZ" id="OxT-ge-zM3"/>
+                                            <outlet property="location" destination="rQD-JZ-JGQ" id="Wbb-WH-7sT"/>
+                                            <outlet property="timestamp" destination="saM-hF-665" id="4yT-U1-kFS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -64,8 +69,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="G6i-Xf-4Nu">
-                                        <barButtonItem key="rightBarButtonItem" title="Broadcast" id="beZ-MG-35N"/>
+                                    <navigationItem title="Alerts" id="G6i-Xf-4Nu">
+                                        <barButtonItem key="rightBarButtonItem" title="Broadcast" id="beZ-MG-35N">
+                                            <connections>
+                                                <action selector="broadcast:" destination="BYZ-38-t0r" id="XLQ-t5-mez"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -73,15 +82,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="alertsTableview" destination="OEu-Ob-9sk" id="Q03-4E-NHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Broadcast View Controller-->
         <scene sceneID="cFF-Pa-DHM">
             <objects>
-                <viewController id="4kp-7V-KQY" sceneMemberID="viewController">
+                <viewController id="4kp-7V-KQY" customClass="BroadcastViewController" customModule="NinerAlerts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4GN-qW-ucg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +115,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrk-k4-NM2">
                                 <rect key="frame" x="125" y="350" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Broadcast"/>
+                                <state key="normal" title="Send Broadcast"/>
+                                <connections>
+                                    <action selector="send:" destination="4kp-7V-KQY" eventType="touchUpInside" id="Hlv-Uw-quc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Range: 45-54" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irS-8F-Ug5">
                                 <rect key="frame" x="118" y="176" width="132" height="21"/>
@@ -123,8 +138,12 @@
                                 <rect key="frame" x="-3" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="jo7-iY-dLQ">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="xnp-su-Asb"/>
+                                    <navigationItem title="Broadcast" id="jo7-iY-dLQ">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="xnp-su-Asb">
+                                            <connections>
+                                                <action selector="cancel:" destination="4kp-7V-KQY" id="pEE-z5-VIE"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -132,6 +151,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="fpn-bn-R1u"/>
                     </view>
+                    <connections>
+                        <outlet property="details" destination="wuE-n6-T3h" id="fnr-uU-I4K"/>
+                        <outlet property="location" destination="103-tT-Omo" id="yGg-nj-lGy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqI-1f-HHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
