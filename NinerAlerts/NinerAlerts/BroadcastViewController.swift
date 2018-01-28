@@ -30,6 +30,7 @@ class BroadcastViewController: UIViewController {
             if let responseJSON = responseJSON as? [String: Any] {
                 print(responseJSON)
             }
+            print("Data: "+String(describing: response))
         }
         
         task.resume()
