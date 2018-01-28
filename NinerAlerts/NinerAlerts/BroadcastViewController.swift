@@ -10,12 +10,13 @@ import UIKit
 
 class BroadcastViewController: UIViewController {
     @IBAction func send(_ sender: UIButton) {
+        print("Sending broadcast")
         let event = Event()
         event.detail = "It's Mohamed!"
         event.location = "Woodward 135"
         let json: [String: Any] = ["detail": event.detail,"location": event.location]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        let url = URL(string: "https://howl-1500184828516.firebaseapp.com/")!
+        let url = URL(string: "https://howl-1500184828516.firebaseapp.com/postEvent")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         // insert json data to the request

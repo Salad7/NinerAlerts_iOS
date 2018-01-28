@@ -14,10 +14,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return Any
+        return UITableViewCell()
     }
     
     @IBAction func broadcast(_ sender: UIBarButtonItem) {
+ 
     }
     @IBOutlet weak var alertsTableview: UITableView!
     

@@ -73,6 +73,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Broadcast" id="beZ-MG-35N">
                                             <connections>
                                                 <action selector="broadcast:" destination="BYZ-38-t0r" id="XLQ-t5-mez"/>
+                                                <segue destination="4kp-7V-KQY" kind="show" id="vH9-2j-Ila"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -134,6 +135,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="xnp-su-Asb">
                                             <connections>
                                                 <action selector="cancel:" destination="4kp-7V-KQY" id="pEE-z5-VIE"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="bsN-EI-Ucw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
