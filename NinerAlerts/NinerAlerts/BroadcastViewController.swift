@@ -10,6 +10,29 @@ import UIKit
 
 class BroadcastViewController: UIViewController {
     @IBAction func send(_ sender: UIButton) {
+        let event = Event()
+        event.detail = "It's Mohamed!"
+        event.location = "Woodward 135"
+        let json: [String: Any] = ["detail": event.detail,"location": event.location]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        let url = URL(string: "https://howl-1500184828516.firebaseapp.com/")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        // insert json data to the request
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+        
+        task.resume()
+
     }
     @IBOutlet weak var details: UITextField!
     @IBOutlet weak var location: UITextField!
