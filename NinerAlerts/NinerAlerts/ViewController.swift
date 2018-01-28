@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func broadcast(_ sender: UIBarButtonItem) {
     }
     @IBOutlet weak var alertsTableview: UITableView!

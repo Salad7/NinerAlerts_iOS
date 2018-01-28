@@ -13,11 +13,12 @@ class Event {
     var location:String
     var detail:String
     var timestamp:String
-    
+    var accesscode:String
     init(){
         location = ""
         detail = ""
         timestamp = ""
+        accesscode = ""
     }
     
     
